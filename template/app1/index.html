@@ -1,0 +1,705 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'img/logo1.jpeg' %}" type="image/jpeg">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/popup/magnific-popup.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    </head>
+    <body>
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+           	<div class="top_menu row m0">
+           		<div class="container">
+					<div class="float-left">
+						<ul class="list header_social">
+							<li><a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook" style="color:blue"></i></a></li>
+							<li><a href="https://www.instagram.com/gsctmp22"><i class="fa fa-instagram" style="color:red"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/gsct-cyber-technology-6501721b8/"><i class="fa fa-linkedin" style="color:blue"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCJY01lSVNnk-LmX5qgw7ZWg?view_as=subscriber"><i class="fa fa-youtube-play" style="color:red"></i></a></li>
+
+					</div>
+					<div class="float-right">
+						<a class="dn_btn" href="">+91-9691964339</a>
+						<a class="dn_btn" href="mailto:support@colorlib.com">gsctmp22@gmail.com</a>
+
+<!-- ========================admin Login+=========================   -->
+          {% if not request.user.is_authenticated %}
+            <a href="/accounts/login"><span class="fa fa-sign-in"></span> Login As Admin</a>
+          {% endif %}
+
+          {% if request.user.is_authenticated %}
+          <a href="#"><span class="fa fa-user"></span> Welcome : {{user.get_username|upper}}  ||  </a>
+          <a href="/accounts/logout"><span class="fa fa-sign-out"></span>Logout</a>
+          {% endif %}
+<!-- ========================admin Login=========================   -->
+
+          </div>
+           		</div>
+           	</div>
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="/"><img src="{% static 'img/logo1.jpeg' %}" height="72px" width="75" alt=""></a>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+
+                <li class="nav-item submenu dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/course-details">Course Details</a></li>
+
+                  </ul>
+                </li>
+
+								<li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service</a>
+									<ul class="dropdown-menu">
+										                    <li class="nav-item"><a class="nav-link" href="/carporate-training">Corporate Training</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/workshop-seminar">Workshop/ Seminar</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/website-development">Website Development</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/digital-marketing">Digital Marketing</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/networking">Networking</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/accounting-services">Accounting Services</a></li>
+
+									</ul>
+								</li>
+
+
+
+								<li class="nav-item"><a class="nav-link" href="/contact-us">Contact</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="/about-us">About</a></li>
+
+
+                {% if request.user.is_authenticated %}
+                      <li class="nav-item"><a class="nav-link" href="/contactenqlist">Contact Enquiry</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/serviceenqlist">Service Enquiry</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/courseenqlist">Course Enquiry</a></li>
+                {% endif %}
+
+
+              </ul>
+						</div>
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+                {% block body_block %}
+      <title>GSCT COMPUTER TRAINING INSTITUTE</title>
+
+
+		<br>
+		<br>
+		<br>
+		<br>
+        <br>
+		<div class="w3-content w3-section" style="max-width:1350px">
+
+  <img class="mySlides" src="{% static 'img/courses/pic1.jpg' %}" height="570" width="1350px" alt="Ethical hacking">
+
+  <img class="mySlides" src="{% static 'img/courses/pic2.jpg' %}" height="570" width="1350px" alt="Cyber security">
+  <img class="mySlides" src="{% static 'img/courses/pic3.jpg' %}" height="570" width="1350px" alt="Programming ">
+  <img class="mySlides" src="{% static 'img/courses/pic4.jpg' %}" height="570" width="1350px" alt="gamming">
+  <img class="mySlides" src="{% static 'img/courses/pic5.jpg' %}" height="570" width="1350px" alt="Codding">
+  <img class="mySlides" src="{% static 'img/courses/pic6.jpg' %}" height="570" width="1350px" alt="Website design">
+
+
+</div>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+        <!--================Finance Area =================-->
+        <section class="finance_area">
+        	<div class="container">
+        		<div class="finance_inner row">
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="finance_item">
+        					<div class="media">
+        						<div class="d-flex">
+        							<i class="lnr lnr-rocket"></i>
+        						</div>
+        						<div class="media-body">
+        							<h5>Software & <br />Engineering</h5>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="finance_item">
+        					<div class="media">
+        						<div class="d-flex">
+        							<i class="lnr lnr-earth"></i>
+        						</div>
+        						<div class="media-body">
+        							<h5>Server& <br />Engineer </h5>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="finance_item">
+        					<div class="media">
+        						<div class="d-flex">
+        							<i class="lnr lnr-smile"></i>
+        						</div>
+        						<div class="media-body">
+        							<h5>Network & <br />Engineer </h5>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="finance_item">
+        					<div class="media">
+        						<div class="d-flex">
+        							<i class="lnr lnr-tag"></i>
+        						</div>
+        						<div class="media-body">
+        							<h5>Data Science & <br/>Ethical Hacker</h5>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Finance Area =================-->
+
+        <!--================Courses Area =================-->
+        <!--
+        <section class="courses_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Popular Courses</h2>
+        			<p>There is a moment in the life of any aspiring astronomer that it is time to buy that first . It's exciting to think about setting up your own viewing station.</p>
+        		</div>
+        		<div class="row courses_inner">
+        			<div class="col-lg-9">
+						<div class="grid_inner">
+							<div class="grid_item wd55">
+								<div class="courses_item">
+									<img src="{% static 'img/courses/course-1.jpg' %}" height="220" width="500" alt="">
+									<div class="hover_text">
+										<a class="cat" href="Regform.html">Enroll Now</a>
+										<a href="#"><h4>Data Science </h4></a>
+										<ul class="list">
+											<li><a href="#"><i class="lnr lnr-users"></i> 355</a></li>
+											<li><a href="#"><i class="lnr lnr-bubble"></i> 35</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="grid_item wd44">
+								<div class="courses_item">
+									<img src="{% static 'img/courses/course-2.jpg' %}" height="220" width="360 alt="">
+									<div class="hover_text">
+										<a class="cat" href="Regform.html">Enroll Now</a>
+										<a href="#"><h4>IT Security(Ethical Hacking)</h4></a>
+										<ul class="list">
+											<li><a href="#"><i class="lnr lnr-users"></i> 355</a></li>
+											<li><a href="#"><i class="lnr lnr-bubble"></i> 35</a></li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="grid_item wd44">
+								<div class="courses_item">
+									<img src="{% static 'img/courses/course-4.jpg' %}" alt="">
+									<div class="hover_text">
+										<a class="cat" href="Regform.html">Enroll Now</a>
+										<a href="#"><h4>Programming Language</h4></a>
+										<ul class="list">
+											<li><a href="#"><i class="lnr lnr-users"></i> 355</a></li>
+											<li><a href="#"><i class="lnr lnr-bubble"></i> 35</a></li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="grid_item wd55">
+								<div class="courses_item">
+									<img src="{% static 'img/courses/course-5.jpg' %}" alt="">
+									<div class="hover_text">
+										<a class="cat" href="Regform.html">Enroll Now</a>
+										<a href="#"><h4>Website Development </h4></a>
+										<ul class="list">
+											<li><a href="#"><i class="lnr lnr-users"></i> 355</a></li>
+											<li><a href="#"><i class="lnr lnr-bubble"></i> 35</a></li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+        			</div>
+        			<div class="col-lg-3">
+        				<div class="course_item">
+							<img src="{% static 'img/courses/course-3.jpg' %} " height="470" width="260 alt="">
+							<div class="hover_text">
+								<a class="cat" href="Regform.html">Enroll Now</a>
+								<a href="#"><h4>Server & CCNA</h4></a>
+								<ul class="list">
+									<li><a href="#"><i class="lnr lnr-users"></i> 355</a></li>
+									<li><a href="#"><i class="lnr lnr-bubble"></i> 35</a></li>
+
+								</ul>
+							</div>
+						</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+         -->
+        <!--================End Courses Area =================-->
+
+
+        <!--================Courses Area2 =================-->
+<div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/cyber-security.jpg' %}" class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Diploma in Cyber Security & Ethical Hacking</h5>
+                      </a>
+<pre >
+  networking
+  CCNA
+  C++
+  Python
+  Server(Linux or Windows)
+  Cyber Forensic
+  IT act
+  Ethical Hacking</pre>
+       <a href="/course-details">Read more</a> </p>
+                           <a href="/course-enquiry">
+                                <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/website-development.jpg' %}" class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Diploma in Website Development</h5>
+                    </a>
+<pre><b>Duration: 10 Months</b>
+  programming Language C/C++
+  Rappid Development Language Python
+  HTML , CSS
+  Bootstrap , JS
+  django(Python Framework)
+  Photoshop
+  Corel Draw
+</pre  >                      <a href="/course-details">Read more</a> <br>
+                           <a href="/course-enquiry">
+                                <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/computer-basic.jpg' %}" class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Diploma in Computer Application</h5>
+                    </a>
+
+<pre><b>Duration: 12 Months</b>
+  Computer Fundamentals(Basic,Internet Surfing, Windows 7,8,10)
+  MS Office(Word, Excel, PowerPoint)
+  Tally(Accounting Concepts, Tally ERP 9 With GST)
+  CPCT(Hindi,English typing, paper Solved)
+  Hardware Assembling and installation
+  Networking Fundamentals
+  DTP(photoshop+ Corel+ Pagemaker )
+
+</pre>                       <a href="/course-details">Read more</a> </p>
+                           <a href="/course-enquiry">
+                                <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+<br><br><br><br><br><br><br><br>
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/programming-languages.jpg' %}" class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Diploma in Secure Programming & Cyber Security</h5>
+                    </a>
+<pre><b>Duration: 12 Months</b>
+  Front End Development(HTML,Bootstrap,CSS, Javascript)
+  Back End Development(Django,C,C++, Java,Python)
+  Framework(Bootstrap, Angular Js, Node JS, Larvel, Django)
+  NETWORKING
+  Linux(Kali, Centos)
+  Ethical Hacking
+  Cyber Security
+</pre>                       <a href="/course-details">Read more</a> </p>
+                           <a href="/course-enquiry">
+                                <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/digital_marketing.jpg' %}"  class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Diploma in Digital Marketing</h5>
+                    </a>
+                    <p class="card-text">
+<pre><b>Duration: 3 Months</b>
+Search Engine Optimization
+Search Engine Marketing
+Social Media Optimization
+Social Media Marketing
+google Adwords
+google Adsense
+Classified Posting
+Affiliate Marketing
+</pre>
+                      .. <a href="/course-details">Read more</a> </p>
+                           <a href="/course-enquiry">
+                                <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/linux.png' %}" class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Certification in Linux Server</h5>
+                    </a>
+<pre>
+<b>Duration: 4 Months</b>
+Basic Configuration
+COncept of Computer Hardware
+Networking Concepts
+IP Addressing
+Server installation
+Service Configuration
+</pre>
+
+                      .. <a href="/course-details">Read more</a> </p>
+                           <a href="/course-enquiry">
+                                <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+<br><br><br><br><br><br><br><br>
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/DTP.jpg' %}" class="card-img-top" width="90%" height="250" alt="Ethical Hacking">
+                      <div class="card-body">
+                        <h5 class="card-title">Certification in DTP</h5>
+                    </a>
+<pre>
+<b>Duration: 3 Months</b>
+Photoshop
+Corel Draw
+PageMaker
+</pre><a href="/course-details">Read more</a> </p>
+                           <a href="/course-enquiry"> <button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 cardmargin ">
+                  <div class="card" >
+                    <a href=""><img src="{% static 'img/courses/home-programming.jpg' %}" class="card-img-top" width="90%" height="250" alt="Certification in Programming Languages">
+                      <div class="card-body">
+                        <h5 class="card-title">Certification in Programming Languages</h5>
+                    </a>
+<pre>
+  <b>Duration: 6 Months</b>
+  C Programming
+  C++ Programming
+  JAVA
+  Python</pre> <a href="/course-details">Read more</a> </p>
+  <a href="/course-enquiry"><button type="button" name="button" class="btn btn-info">Enquiry Now !</button>
+                           </a>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
+        <!--================End Courses Area =================-->
+
+
+        <!--================Team Area =================-->
+<!--
+        <section class="team_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Meet Our Faculty</h2>
+        			<p> </p>
+        		</div>
+        		<div class="row team_inner">
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="rounded-circle" src="{% static 'img/team/team-1.jpg' %}" height="250" width="150" alt="">
+        						<div class="hover">
+        							<a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook"></i></a>
+        							<a href="#"><i class="fa fa-twitter"></i></a>
+        							<a href="#"><i class="fa fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Yogesh Shukla</h4>
+        						<p>Managing Director </p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="rounded-circle" src="{% static 'img/team/team-2.jpg' %}" height="250" width="250" alt="">
+        						<div class="hover">
+        							<a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook"></i></a>
+        							<a href="#"><i class="fa fa-twitter"></i></a>
+        							<a href="#"><i class="fa fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Nilesh Dubey</h4>
+        						<p>Center Head</p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="rounded-circle" src="{% static 'img/team/team-3.jpg' %}" alt="">
+        						<div class="hover">
+        							<a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook"></i></a>
+        							<a href="#"><i class="fa fa-twitter"></i></a>
+        							<a href="#"><i class="fa fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Vivek Shukla</h4>
+        						<p>Marketting Manager</p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="rounded-circle" src="{% static 'img/team/team-4.jpg' %}" alt="">
+        						<div class="hover">
+        							<a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook"></i></a>
+        							<a href="#"><i class="fa fa-twitter"></i></a>
+        							<a href="#"><i class="fa fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Priyanka </h4>
+        						<p>Bussiness Dovelopment Manager</p>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+ -->
+
+        <!--================End Team Area =================-->
+
+
+
+        <!--================Impress Area =================-->
+        <section class="impress_area p_120">
+        	<div class="container">
+        		<div class="impress_inner text-center">
+					<h2>Become an instructor</h2>
+					<p></p>
+					<a class="main_btn2" href="/contact-us">Apply for the post</a>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Impress Area =================-->
+
+
+                                  {% endblock %}
+
+
+
+        <!--================ start footer Area  =================-->
+        <footer class="footer-area p_60">
+            <div class="container">
+              <br>
+                <div class="row">
+
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Top Products</h6>
+                            <ul class="list">
+                            	<li><a href="#">Managed Website</a></li>
+                            	<li><a href="#">Manage Reputation</a></li>
+                            	<li><a href="#">Power Tools</a></li>
+                            	<li><a href="#">Marketing Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Quick Links</h6>
+                            <ul class="list">
+                            	<li><a href="#">Jobs</a></li>
+                            	<li><a href="#">Brand Assets</a></li>
+                            	<li><a href="#">Investor Relations</a></li>
+                            	<li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Features</h6>
+                            <ul class="list">
+                            	<li><a href="#">Jobs</a></li>
+                            	<li><a href="#">Brand Assets</a></li>
+                            	<li><a href="#">Investor Relations</a></li>
+                            	<li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Resources</h6>
+                            <ul class="list">
+                            	<li><a href="#">Guides</a></li>
+                            	<li><a href="#">Research</a></li>
+                            	<li><a href="#">Experts</a></li>
+                            	<li><a href="#">Agencies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <aside class="f_widget news_widget">
+        					<div class="f_title">
+        						<h3 class="footer_title">Newsletter</h3>
+        					</div>
+        					<p>Stay updated with our latest trends</p>
+        					<div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                	<div class="input-group d-flex flex-row">
+                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+                                    </div>
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+        				</aside>
+                    </div>
+                </div>
+                <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                    <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script>GSCT - All Rights Reserved.
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="col-lg-4 col-md-4 footer-social">
+                       <a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook" style="color:white"></i></a>
+                       <a href="https://www.instagram.com/gsctmp22"><i class="fa fa-instagram" style="color:red"></i></a>
+                       <a href="https://www.linkedin.com/in/gsct-cyber-technology-6501721b8/"><i class="fa fa-linkedin" style="color:white"></i></a>
+                       <a href="https://www.youtube.com/channel/UCJY01lSVNnk-LmX5qgw7ZWg?view_as=subscriber"><i class="fa fa-youtube-play" style="color:red"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+		<!--================ End footer Area  =================-->
+
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/stellar.js' %}"></script>
+        <script src="{% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendors/popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

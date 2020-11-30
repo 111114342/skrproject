@@ -1,0 +1,15 @@
+{% extends 'app1/index.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class="container">
+
+<title>GSCT | COURSE ENQUIRY</title>
+<form method="post" enctype="multipart/form-data">
+  {{form.as_p}}
+  {% csrf_token %}
+  <input type="submit" class="btn btn-lg btn-info btn-block" value="Submit">
+</form>
+
+</div>
+{% endblock %}

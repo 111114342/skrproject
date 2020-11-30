@@ -1,0 +1,18 @@
+{% extends 'app1/index.html' %}
+{% load static %}
+{% block body_block %}
+{% load crispy_forms_tags %}
+
+
+<div class="card card-body bg-light col-sm-4" id="mrgin-top">
+    <h1 align=center>Service Enquiry Form</h1>
+    <form method="post" enctype="multipart/form-data">
+      <table>
+        {{ form.as_table }}
+    </table>
+      {% csrf_token %}
+      <input type="submit" class="btn btn-lg btn-danger btn-block" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

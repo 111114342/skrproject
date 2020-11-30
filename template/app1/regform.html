@@ -1,0 +1,21 @@
+{% extends 'app1/index.html' %}
+{% load static %}
+{% block body_block %}
+{% load crispy_forms_tags %}
+
+<div class="bg-white">
+
+<title>GSCT | COURSE ENQUIRY</title>
+<div class="card card-body bg-light col-sm-5 col-md-5 col-lg-5 " id="mrgin-top" style="margin-left:350px;">
+    <h1 align=center>Enrollment Form</h1>
+    <form method="post" enctype="multipart/form-data">
+      <table>
+        {{ form.as_table }}
+    </table>
+      {% csrf_token %}
+      <input type="submit" class="btn btn-lg btn-info btn-block" value="Submit">
+    </form>
+</div>
+
+</div>
+{% endblock %}
