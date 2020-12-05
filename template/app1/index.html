@@ -37,87 +37,77 @@
     <body>
 
         <!--================Header Menu Area =================-->
-        <header class="header_area">
-           	<div class="top_menu row m0">
-           		<div class="container">
-					<div class="float-left">
-						<ul class="list header_social">
-							<li><a href="https://www.facebook.com/gsct.sidhi"><i class="fa fa-facebook" style="color:blue"></i></a></li>
-							<li><a href="https://www.instagram.com/gsctmp22"><i class="fa fa-instagram" style="color:red"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/gsct-cyber-technology-6501721b8/"><i class="fa fa-linkedin" style="color:blue"></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UCJY01lSVNnk-LmX5qgw7ZWg?view_as=subscriber"><i class="fa fa-youtube-play" style="color:red"></i></a></li>
 
-					</div>
-					<div class="float-right">
-						<a class="dn_btn" href="">+91-9691964339</a>
-						<a class="dn_btn" href="mailto:support@colorlib.com">gsctmp22@gmail.com</a>
 
-<!-- ========================admin Login+=========================   -->
-          {% if not request.user.is_authenticated %}
-            <a href="/accounts/login"><span class="fa fa-sign-in"></span> Login As Admin</a>
-          {% endif %}
+        <header class="header_area  ">
 
-          {% if request.user.is_authenticated %}
-          <a href="#"><span class="fa fa-user"></span> Welcome : {{user.get_username|upper}}  ||  </a>
-          <a href="/accounts/logout"><span class="fa fa-sign-out"></span>Logout</a>
-          {% endif %}
-<!-- ========================admin Login=========================   -->
-
-          </div>
-           		</div>
-           	</div>
-            <div class="main_menu">
-            	<nav class="navbar navbar-expand-lg navbar-light">
+            <div class="main_menu" style="background-color:#04091e">
+            	<nav class="navbar navbar-expand-lg navbar" style="background-color:#04091e">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<a class="navbar-brand logo_h" href="/"><img src="{% static 'img/logo1.jpeg' %}" height="72px" width="75" alt=""></a>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse"
+        data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup "
+        aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon" style="color:black"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+  <div class="navbar-nav ml-auto" >
+    <li class="nav-item"><a class="nav-link" href="/"style="font-size:17px; color:white">Home</a></li>
 
-                <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/course-details">Course Details</a></li>
+                  <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                     aria-haspopup="true" aria-expanded="false" style="font-size:17px; color:white">Courses</a>
+                    <ul class="dropdown-menu" style="background-color:#04091e">
+                      <li class="nav-item"><a class="nav-link" href="/courses" style="color:white">Courses</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/course-details"style="color:white">Course Details</a></li>
 
-                  </ul>
-                </li>
+                    </ul>
+                  </li>
 
-								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service</a>
-									<ul class="dropdown-menu">
-										                    <li class="nav-item"><a class="nav-link" href="/carporate-training">Corporate Training</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/workshop-seminar">Workshop/ Seminar</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/website-development">Website Development</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/digital-marketing">Digital Marketing</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/networking">Networking</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/accounting-services">Accounting Services</a></li>
+  								<li class="nav-item submenu dropdown" >
+  									<a href="#" class="nav-link dropdown-toggle bg-dark" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false"style="font-size:17px; color:white;">Service</a>
+  									<ul class="dropdown-menu" style="background-color:#04091e">
+  										                    <li class="nav-item bg-dark"><a class="nav-link" href="/carporate-training" style= "color:white">Corporate Training</a></li>
+                                          <li class="nav-item"><a class="nav-link" href="/workshop-seminar" style= "color:white">Workshop/ Seminar</a></li>
+                                          <li class="nav-item"><a class="nav-link" href="/website-development"style= "color:white">Website Development</a></li>
+                                          <li class="nav-item"><a class="nav-link" href="/digital-marketing"style= "color:white">Digital Marketing</a></li>
+                                          <li class="nav-item"><a class="nav-link" href="/networking"style= "color:white">Networking</a></li>
+                                          <li class="nav-item"><a class="nav-link" href="/accounting-services" style= "color:white">Accounting Services</a></li>
 
-									</ul>
-								</li>
-
-
-
-								<li class="nav-item"><a class="nav-link" href="/contact-us">Contact</a></li>
-
-                <li class="nav-item"><a class="nav-link" href="/about-us">About</a></li>
-
-
-                {% if request.user.is_authenticated %}
-                      <li class="nav-item"><a class="nav-link" href="/contactenqlist">Contact Enquiry</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/serviceenqlist">Service Enquiry</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/courseenqlist">Course Enquiry</a></li>
-                {% endif %}
+  									</ul>
+  								</li>
 
 
-              </ul>
-						</div>
-					</div>
-            	</nav>
-            </div>
+
+  								<li class="nav-item"><a class="nav-link" href="/contact-us" style="font-size:17px; color:white">Contact</a></li>
+
+                  <li class="nav-item"><a class="nav-link" href="/about-us" style="font-size:17px;color:white">About</a></li>
+
+                  {% if not request.user.is_authenticated %}
+                    <a href="/accounts/login"><span class="fa fa-sign-in" style = "margin-top:15px"></span> Login As Admin</a>
+                  {% endif %}
+
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item"><a class="nav-link" href="/contactenqlist" style="color:white">Contact Enquiry</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/serviceenqlist" style= "color:white">Service Enquiry</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/courseenqlist" style="color:white">Course Enquiry</a></li>
+
+                  <a href="#"><span class="fa fa-user"></span> Welcome : {{user.get_username|upper}}  ||  </a>
+                  <a href="/accounts/logout"><span class="fa fa-sign-out"></span>Logout</a>
+                  {% endif %}
+
+
+
+
+                </ul>
+
+
+  </div>
+</div>
         </header>
         <!--================Header Menu Area =================-->
 
@@ -127,39 +117,29 @@
 
 		<br>
 		<br>
-		<br>
-		<br>
-        <br>
-		<div class="w3-content w3-section" style="max-width:1350px">
+    <br>
+    <br>
 
-  <img class="mySlides" src="{% static 'img/courses/pic1.jpg' %}" height="570" width="1350px" alt="Ethical hacking">
+      <!--================carousel =================-->
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="10000">
 
-  <img class="mySlides" src="{% static 'img/courses/pic2.jpg' %}" height="570" width="1350px" alt="Cyber security">
-  <img class="mySlides" src="{% static 'img/courses/pic3.jpg' %}" height="570" width="1350px" alt="Programming ">
-  <img class="mySlides" src="{% static 'img/courses/pic4.jpg' %}" height="570" width="1350px" alt="gamming">
-  <img class="mySlides" src="{% static 'img/courses/pic5.jpg' %}" height="570" width="1350px" alt="Codding">
-  <img class="mySlides" src="{% static 'img/courses/pic6.jpg' %}" height="570" width="1350px" alt="Website design">
+        <img src="{% static 'img/courses/cyber-security.jpg' %}" class="card-img-top" width="90%" height="570" alt="Ethical Hacking">
 
 
+
+    </div>
+    <div class="carousel-item"data-interval="2000">
+      <h2>hello</h2>
+      <img src="{% static 'img/courses/cyber-security.jpg' %}" class="card-img-top" width="90%" height="570" alt="Ethical Hacking">
+
+    </div>
+    <div class="carousel-item" data-interval="2000">
+      <h3>hello</h3>
+    </div>
+  </div>
 </div>
-
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>
 
         <!--================Finance Area =================-->
         <section class="finance_area">

@@ -85,6 +85,7 @@
 		margin-bottom: 4px;
 		transition: all 400ms linear;
 		cursor: pointer;
+    
 	}
     .navbar .container{
         padding-left: 15px;
@@ -147,7 +148,7 @@
     }
 	/* End Blog page Area css
 	============================================================================================ */
-	
+
 	/* Contact Page Area css
 	============================================================================================ */
 	.contact_info{
@@ -263,7 +264,7 @@
 	.course_item img{
 		width: 100%;
 	}
-	
+
 }
 @media (max-width:600px){
 	.builder_inner .builder_item {
@@ -317,7 +318,7 @@
 	}
 	/* End Elements Area css
 	============================================================================================ */
-	
+
 	/* Blog Page Area css
 	============================================================================================ */
 	.blog_details h2 {
@@ -353,7 +354,7 @@
 	}
 	/* End Main Menu Area css
 	============================================================================================ */
-	
+
 	/* Home Banner Area css
 	============================================================================================ */
     .home_banner_area .banner_inner .banner_content {
@@ -382,7 +383,7 @@
 	.comments-area .thumb {
 		margin-right: 10px;
 	}
-	
+
 	/* End Blog Page Area css
 	============================================================================================ */
 	.video_area .popup-youtube img {
